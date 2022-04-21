@@ -1,0 +1,30 @@
+{
+  "recommendations": [
+      // Git
+      "eamodio.gitlens",
+
+      // Formatters & linters
+      "misogi.ruby-rubocop",
+      // "aki77.haml-lint",
+      "esbenp.prettier-vscode",
+      "stylelint.vscode-stylelint",
+
+      // Syntax
+      "rebornix.ruby",
+      "wingrunr21.vscode-ruby",
+      "bung87.rails",
+      "hridoy.rails-snippets",
+      // "karunamurti.haml",
+      // "bradlc.vscode-tailwindcss",
+      "shanehofstetter.rails-i18n",
+
+      // Themes
+      "pkief.material-icon-theme",
+      "equinusocio.vsc-material-theme",
+      "equinusocio.vsc-material-theme-icons",
+
+      // Productivity
+      "wayou.vscode-todo-highlight",
+      "bung87.vscode-gemfile"
+  ]
+}

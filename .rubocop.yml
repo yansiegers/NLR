@@ -1,0 +1,7 @@
+inherit_gem:
+  rubocop-rails_config:
+    - config/rails.yml
+require: rubocop-rails
+
+Style/StringLiterals:
+  EnforcedStyle: single_quotes
