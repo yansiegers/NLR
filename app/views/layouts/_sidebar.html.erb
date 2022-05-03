@@ -5,13 +5,29 @@
 
   <span class="text-lg">Analysis</span>
   <ol class="nav">
-    <li class="link -current"><a href="/">Home</a></li>
-    <li class="link"><a href="#">Flight Hours</a></li>
-    <li class="link"><a href="#">Usage Spectrum</a></li>
-    <li class="link"><a href="#">Health</a></li>
-    <li class="link"><a href="#">W&B</a></li>
-    <li class="link"><a href="#">Suspension</a></li>
-    <li class="link"><a href="#">Impact</a></li>
-    <li class="link"><a href="#">Raw Stream</a></li>
+    <li class="<%= class_names('link', { '-current': current_page?(root_path) } ) %>">
+      <%= link_to 'Home', root_path %>
+    </li>
+    <li class="<%= class_names('link', { '-current': current_page?(graphs_flight_hours_path) } ) %>">
+      <%= link_to 'Flight Hours', graphs_flight_hours_path %>
+    </li>
+    <li class="<%= class_names('link', { '-current': current_page?(graphs_usage_spectrums_path) } ) %>">
+      <%= link_to 'Usage Spectrum', graphs_usage_spectrums_path %>
+    </li>
+    <li class="<%= class_names('link', { '-current': current_page?(graphs_healths_path) } ) %>">
+      <%= link_to 'Health', graphs_healths_path %>
+    </li>
+    <li class="<%= class_names('link', { '-current': current_page?(graphs_weights_balances_path) } ) %>">
+      <%= link_to 'W&B', graphs_weights_balances_path %>
+    </li>
+    <li class="<%= class_names('link', { '-current': current_page?(graphs_suspensions_path) } ) %>">
+      <%= link_to 'Suspension', graphs_suspensions_path %>
+    </li>
+    <li class="<%= class_names('link', { '-current': current_page?(graphs_impacts_path) } ) %>">
+      <%= link_to 'Impact', graphs_impacts_path %>
+    </li>
+    <li class="<%= class_names('link', { '-current': current_page?(graphs_raw_streams_path) } ) %>">
+      <%= link_to 'Raw Stream', graphs_raw_streams_path %>
+    </li>
   </ol>
 </aside>
