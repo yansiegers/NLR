@@ -1,1 +1,37 @@
 <h1 class="text-xl font-bold">NLR Dashboard</h1>
+
+<ol class="nav -inline flex">
+  <li class="<%= class_names('link', { '-current': current_page?(root_path, check_parameters: true) } ) %>">
+    <%= link_to 'All', root_path %>
+  </li>
+  <% @properties.each do |property| %>
+    <li class="<%= class_names('link', { '-current': current_page?(root_path(filter: property)) } ) %>">
+      <%= link_to property, root_path(filter: property) %>
+    </li>
+  <% end %>
+</ol>
+
+<% if @measuring_points.any? %>
+  <table>
+    <tr>
+      <%# <th>ID</th> %>
+      <%# <th>Property</th> %>
+      <th>Timestamp</th>
+      <th>Value</th>
+    </tr>
+    <% @measuring_points.each do |measuring_point| %>
+      <tr>
+        <%# <td> %>
+          <%# <%= measuring_point.id %>
+        <%# </td> %>
+        <%# <td> %>
+          <%# <%= measuring_point.property %>
+        <%# </td> %>
+        <td><%= measuring_point.timestamp %></td>
+        <td><%= measuring_point.value %></td>
+      </tr>
+    <% end %>
+  </table>
+<% else %>
+  <p>No data</p>
+<% end %>

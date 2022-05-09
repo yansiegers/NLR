@@ -6,6 +6,9 @@
   ol.nav {
     @apply my-6;
   }
+  ol.nav.-inline {
+    @apply flex
+  }
   li {
     @apply p-2 text-blue-600;
   }
