@@ -11,6 +11,8 @@
   <% end %>
 </ol>
 
+<%= line_chart @data, xtitle: "Timestamp", ytitle: "Value" %>
+
 <% if @measuring_points.any? %>
   <table>
     <tr>
