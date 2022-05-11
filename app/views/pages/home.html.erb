@@ -11,26 +11,38 @@
   <% end %>
 </ol>
 
-<%= line_chart @data, xtitle: "Timestamp", ytitle: "Value" %>
+<%= line_chart @data, xtitle: "Timestamp", ytitle: "Value" if params[:filter] %>
+<%# <%= @data.inspect %>
 
-<% if @measuring_points.any? %>
+<% if @measuring_points.any? && params[:filter] %>
   <table>
     <tr>
-      <%# <th>ID</th> %>
-      <%# <th>Property</th> %>
       <th>Timestamp</th>
       <th>Value</th>
     </tr>
     <% @measuring_points.each do |measuring_point| %>
       <tr>
-        <%# <td> %>
-          <%# <%= measuring_point.id %>
-        <%# </td> %>
-        <%# <td> %>
-          <%# <%= measuring_point.property %>
-        <%# </td> %>
         <td><%= measuring_point.timestamp %></td>
         <td><%= measuring_point.value %></td>
+      </tr>
+    <% end %>
+  </table>
+<% elsif @measuring_points.any? && !params[:filter] %>
+    <table>
+    <tr>
+      <th>Timestamp</th>
+      <% @properties.each do |property| %>
+        <th><%= property %></th>
+      <% end %>
+    </tr>
+    <% @measuring_points.each do |measuring_point| %>
+      <tr>
+        <td><%= measuring_point[0] %></td>
+        <% measuring_point[1].each do |value| %>
+          <td>
+            <%= value %>
+          </td>
+        <% end %>
       </tr>
     <% end %>
   </table>
