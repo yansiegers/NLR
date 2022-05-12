@@ -12,7 +12,7 @@
 </ol>
 
 <%= line_chart @data, xtitle: "Timestamp", ytitle: "Value" if params[:filter] %>
-<%# <%= @data.inspect %>
+
 
 <% if @measuring_points.any? && params[:filter] %>
   <table>

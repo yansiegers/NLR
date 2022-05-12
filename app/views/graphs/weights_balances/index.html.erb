@@ -1,1 +1,18 @@
 <h1 class="text-xl font-bold">Weight & Balance</h1>
+
+<%# <%= line_chart @data, title: 'Center of Gravity Y', xtitle: "Time (s)", ytitle: "y" if @data %>
+
+<div id="tester" style="width:600px;height:600px;"></div>
+<script>
+  TESTER = document.getElementById('tester');
+  Plotly.newPlot(
+    TESTER,
+    [{
+      x: [1, 2, 3, 4, 5],
+      y: [1, 2, 4, 8, 16]
+    }],
+    { margin: { t: 0 } }
+  );
+</script>
+
+<%# <%= @data.inspect %>
