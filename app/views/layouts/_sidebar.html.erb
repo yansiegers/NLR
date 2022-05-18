@@ -30,4 +30,21 @@
       <%= link_to 'Raw Stream', graphs_raw_streams_path %>
     </li>
   </ol>
+
+  <span class="text-lg">Statistics</span>
+  <ol class="nav">
+    <li class="<%= class_names('link', { '-current': current_page?(bookmarks_path) } ) %>">
+      <%= link_to 'Bookmarks', bookmarks_path %>
+    </li>
+    <li class="<%= class_names('link', { '-current': current_page?(graphs_path) } ) %>">
+      <%= link_to 'Graphs', graphs_path %>
+    </li>
+  </ol>
+
+  <span class="text-lg">System (admin-only)</span>
+  <ol class="nav">
+    <li class="<%= class_names('link', { '-current': current_page?(system_users_path) } ) %>">
+      <%= link_to 'Users', system_users_path %>
+    </li>
+  </ol>
 </aside>

@@ -15,4 +15,11 @@ Rails.application.routes.draw do
     resources :impacts, only: %i[index]
     resources :raw_streams, only: %i[index]
   end
+
+  resources :graphs
+  resources :bookmarks
+
+  namespace :system do
+    resources :users
+  end
 end

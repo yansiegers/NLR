@@ -1,0 +1,22 @@
+<h1 class="text-xl font-bold">Graphs</h1>
+
+<% if @graphs.any? %>
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Property</th>
+      <th>Created at</th>
+      <th>Updated at</th>
+    </tr>
+    <% @graphs.each do |graph| %>
+      <tr>
+        <td><%= graph.id %></td>
+        <td><%= graph.name %></td>
+        <td><%= graph.property %></td>
+        <td><%= graph.created_at %></td>
+        <td><%= graph.updated_at %></td>
+      </tr>
+    <% end %>
+  </table>
+<% end %>
