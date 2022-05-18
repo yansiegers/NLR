@@ -18,4 +18,11 @@
   li.-current a:hover {
     @apply underline;
   }
+
+  thead:first-child {
+    @apply sticky top-0 border-b border-gray-200 bg-white
+  }
+  th, td {
+    @apply p-2
+  }
 }

@@ -2,23 +2,27 @@
 
 <% if @users.any? %>
   <table>
-    <tr>
-      <th>ID</th>
-      <th>Full name</th>
-      <th>Email address</th>
-      <th>Password</th>
-      <th>Created at</th>
-      <th>Updated at</th>
-    </tr>
-    <% @users.each do |graph| %>
+    <thead>
       <tr>
-        <td><%= graph.id %></td>
-        <td><%= graph.full_name %></td>
-        <td><%= graph.email_address %></td>
-        <td><%= graph.password %></td>
-        <td><%= graph.created_at %></td>
-        <td><%= graph.updated_at %></td>
+        <th>ID</th>
+        <th>Full name</th>
+        <th>Email address</th>
+        <th>Password</th>
+        <th>Created at</th>
+        <th>Updated at</th>
       </tr>
-    <% end %>
+    </thead>
+    <tbody>
+      <% @users.each do |graph| %>
+        <tr>
+          <td><%= graph.id %></td>
+          <td><%= graph.full_name %></td>
+          <td><%= graph.email_address %></td>
+          <td><%= graph.password %></td>
+          <td><%= graph.created_at %></td>
+          <td><%= graph.updated_at %></td>
+        </tr>
+      <% end %>
+    </tbody>
   </table>
 <% end %>

@@ -16,35 +16,43 @@
 
 <% if @measuring_points.any? && params[:filter] %>
   <table>
-    <tr>
-      <th>Timestamp</th>
-      <th>Value</th>
-    </tr>
-    <% @measuring_points.each do |measuring_point| %>
+    <thead>
       <tr>
-        <td><%= measuring_point.timestamp %></td>
-        <td><%= measuring_point.value %></td>
+        <th>Timestamp</th>
+        <th>Value</th>
       </tr>
-    <% end %>
+    </thead>
+    <tbody>
+      <% @measuring_points.each do |measuring_point| %>
+        <tr>
+          <td><%= measuring_point.timestamp %></td>
+          <td><%= measuring_point.value %></td>
+        </tr>
+      <% end %>
+    </tbody>
   </table>
 <% elsif @measuring_points.any? && !params[:filter] %>
-    <table>
-    <tr>
-      <th>Timestamp</th>
-      <% @properties.each do |property| %>
-        <th><%= property %></th>
-      <% end %>
-    </tr>
-    <% @measuring_points.each do |measuring_point| %>
+  <table>
+    <thead>
       <tr>
-        <td><%= measuring_point[0] %></td>
-        <% measuring_point[1].each do |value| %>
-          <td>
-            <%= value %>
-          </td>
+        <th>Timestamp</th>
+        <% @properties.each do |property| %>
+          <th><%= property %></th>
         <% end %>
       </tr>
-    <% end %>
+    </thead>
+    <tbody>
+      <% @measuring_points.each do |measuring_point| %>
+        <tr>
+          <td><%= measuring_point[0] %></td>
+          <% measuring_point[1].each do |value| %>
+            <td>
+              <%= value %>
+            </td>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
   </table>
 <% else %>
   <p>No data</p>
