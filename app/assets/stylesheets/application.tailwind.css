@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 @layer components {
+  h1 {
+    @apply text-xl font-bold mb-4;
+  }
+
   ol.nav {
     @apply my-6;
   }
@@ -24,5 +28,9 @@
   }
   th, td {
     @apply p-2
+  }
+
+  input[type=submit] {
+    @apply p-2 mt-4 text-white bg-blue-500 rounded cursor-pointer;
   }
 }
