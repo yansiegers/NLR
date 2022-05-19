@@ -20,6 +20,9 @@
           <td><%= graph.property %></td>
           <td><%= graph.created_at %></td>
           <td><%= graph.updated_at %></td>
+          <td>
+            <%= button_to 'Delete', graph, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </td>
         </tr>
       <% end %>
     </tbody>

@@ -20,6 +20,18 @@ class GraphsController < ApplicationController
     end
   end
 
+  def destroy
+    @graph = Graph.find(params[:id])
+    if @graph.destroy
+      flash[:success] = 'Graph was successfully deleted'
+      redirect_to graphs_path
+    else
+      flash[:error] = 'Something went wrong'
+      redirect_to graphs_path
+    end
+  end
+
+
   private
 
   def graph_params
