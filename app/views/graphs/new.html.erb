@@ -1,0 +1,10 @@
+<h1 class="text-xl font-bold">Graphs - new</h1>
+
+<%= form_with model: @graph do |form| %>
+  <%= form.label :name, 'Name:' %>
+  <%= form.text_field :name %>
+  <%= form.label :propery, "Property:" %>
+  <%= form.text_field :property %>
+
+  <%= form.submit %>
+<% end %>
