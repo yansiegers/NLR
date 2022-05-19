@@ -1,14 +1,9 @@
-<ol>
-  <% @properties.each do |property| %>
-    <li><%= property %></li>
-  <% end %>
-</ol>
-
 <%= form_with model: @graph do |form| %>
-  <%= form.label :name, 'Name:' %>
-  <%= form.text_field :name %>
-  <%= form.label :propery, "Property:" %>
-  <%= form.text_field :property %>
+  <%= form.label :name, 'Name:'%><br>
+  <%= form.text_field :name %><br>
+
+  <%= form.label :propery, "Property:" %><br>
+  <%= form.select :property, graph_properties, { prompt: 'Select' } %><br>
 
   <%= form.submit %>
 <% end %>

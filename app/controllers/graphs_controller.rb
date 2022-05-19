@@ -2,7 +2,6 @@
 
 class GraphsController < ApplicationController
   before_action :find_graph, only: %i[edit update destroy]
-  before_action :get_properties, only: %i[new edit]
 
   def index
     @graphs = Graph.all
@@ -50,10 +49,6 @@ class GraphsController < ApplicationController
   def graph_params
     params.require(:graph)
           .permit(:name, :property)
-  end
-
-  def get_properties
-    @properties = MeasuringPoint.pluck(:property).uniq
   end
 
   def find_graph
