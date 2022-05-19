@@ -1,4 +1,9 @@
-<h1 class="text-xl font-bold">Graphs - new</h1>
+<h1 class="text-xl font-bold">New graph</h1>
+<ol>
+  <% @properties.each do |property| %>
+    <li><%= property %></li>
+  <% end %>
+</ol>
 
 <%= form_with model: @graph do |form| %>
   <%= form.label :name, 'Name:' %>
