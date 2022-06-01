@@ -17,7 +17,6 @@ class System::UsersController < ApplicationController
       flash[:success] = 'User successfully created'
       redirect_to system_users_path
     else
-      flash[:error] = 'Something went wrong'
       render :new, status: :unprocessable_entity
     end
   end
@@ -29,7 +28,6 @@ class System::UsersController < ApplicationController
       flash[:success] = 'User was successfully updated'
       redirect_to system_users_path
     else
-      flash[:error] = 'Something went wrong'
       render :edit, status: :unprocessable_entity
     end
   end

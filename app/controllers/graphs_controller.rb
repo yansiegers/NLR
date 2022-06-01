@@ -17,7 +17,6 @@ class GraphsController < ApplicationController
       flash[:success] = 'Graph successfully created'
       redirect_to graphs_path
     else
-      flash[:error] = 'Something went wrong'
       render :new, status: :unprocessable_entity
     end
   end
@@ -29,7 +28,6 @@ class GraphsController < ApplicationController
       flash[:success] = 'Graph was successfully updated'
       redirect_to graphs_path
     else
-      flash[:error] = 'Something went wrong'
       render :edit, status: :unprocessable_entity
     end
   end

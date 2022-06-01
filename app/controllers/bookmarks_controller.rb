@@ -17,7 +17,6 @@ class BookmarksController < ApplicationController
       flash[:success] = 'Bookmark successfully created'
       redirect_to bookmarks_path
     else
-      flash[:error] = 'Something went wrong'
       render :new, status: :unprocessable_entity
     end
   end
@@ -29,7 +28,6 @@ class BookmarksController < ApplicationController
       flash[:success] = 'Bookmark was successfully updated'
       redirect_to bookmarks_path
     else
-      flash[:error] = 'Something went wrong'
       render :edit, status: :unprocessable_entity
     end
   end
