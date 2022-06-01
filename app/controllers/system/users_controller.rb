@@ -22,6 +22,18 @@ class System::UsersController < ApplicationController
     end
   end
 
+  def edit; end
+
+  def update
+    if @user.update(user_params)
+      flash[:success] = 'User was successfully updated'
+      redirect_to system_users_path
+    else
+      flash[:error] = 'Something went wrong'
+      render 'edit'
+    end
+  end
+
   def destroy
     if @user.destroy
       flash[:success] = 'User was successfully deleted'
