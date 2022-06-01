@@ -14,14 +14,17 @@
       </tr>
     </thead>
     <tbody>
-      <% @users.each do |graph| %>
+      <% @users.each do |user| %>
         <tr>
-          <td><%= graph.id %></td>
-          <td><%= graph.full_name %></td>
-          <td><%= graph.email_address %></td>
-          <td><%= graph.password %></td>
-          <td><%= graph.created_at %></td>
-          <td><%= graph.updated_at %></td>
+          <td><%= user.id %></td>
+          <td><%= user.full_name %></td>
+          <td><%= user.email_address %></td>
+          <td><%= user.password %></td>
+          <td><%= user.created_at %></td>
+          <td><%= user.updated_at %></td>
+          <td>
+            <%= button_to 'Delete', [:system, user], method: :delete, data: { confirm: 'Are you sure?' } %>
+          </td>
         </tr>
       <% end %>
     </tbody>
