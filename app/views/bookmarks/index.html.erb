@@ -1,4 +1,5 @@
-<h1 class="text-xl font-bold">Graphs</h1>
+<h1 class="text-xl font-bold">Bookmarks</h1>
+<%= link_to 'New bookmark', new_bookmark_path %>
 
 <% if @bookmarks.any? %>
   <table>
@@ -13,14 +14,20 @@
       </tr>
     </thead>
     <tbody>
-      <% @bookmarks.each do |graph| %>
+      <% @bookmarks.each do |bookmark| %>
         <tr>
-          <td><%= graph.id %></td>
-          <td><%= graph.name %></td>
-          <td><%= graph.user_id %></td>
-          <td><%= graph.favorite %></td>
-          <td><%= graph.created_at %></td>
-          <td><%= graph.updated_at %></td>
+          <td><%= bookmark.id %></td>
+          <td><%= bookmark.name %></td>
+          <td>
+            <% if bookmark.user %>
+              <%= "#{bookmark.user.full_name} (#{bookmark.user_id})" %>
+            <% else %>
+              -
+            <% end %>
+          </td>
+          <td><%= bookmark.favorite %></td>
+          <td><%= bookmark.created_at %></td>
+          <td><%= bookmark.updated_at %></td>
         </tr>
       <% end %>
     </tbody>
