@@ -33,4 +33,14 @@
   input[type=submit] {
     @apply p-2 mt-4 text-white bg-blue-500 rounded cursor-pointer;
   }
+
+  .flash-message {
+    @apply p-4 my-8 border-sky-500 bg-sky-200;
+  }
+  .flash-message__success {
+    @apply border-emerald-500 bg-emerald-200;
+  }
+  .flash-message__error {
+    @apply border-red-500 bg-red-200;
+  }
 }
