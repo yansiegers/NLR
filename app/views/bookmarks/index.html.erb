@@ -28,6 +28,9 @@
           <td><%= bookmark.favorite %></td>
           <td><%= bookmark.created_at %></td>
           <td><%= bookmark.updated_at %></td>
+          <td>
+            <%= link_to 'Edit', edit_bookmark_path(bookmark) %>
+          </td>
         </tr>
       <% end %>
     </tbody>
