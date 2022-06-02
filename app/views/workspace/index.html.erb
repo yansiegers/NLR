@@ -15,6 +15,7 @@
             <div>
               <h3><%= graph.name %></h3>
               <img src="http://placekitten.com/320/180" alt="kitten">
+              <%= button_to '❌', [bookmark, graph], method: :delete , data: { confirm: 'Are you sure?' } %>
             </div>
           <% end %>
           <div class="flex justify-center items-center border bg-gray-200">
