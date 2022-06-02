@@ -1,0 +1,10 @@
+<h1>Add graph to <%= @bookmark.name %></h1>
+<%# TODO: Add form errors %>
+<%# <%= render partial: 'partials/form_errors', locals: { object: @user } %>
+
+<%= form_with url: bookmark_graphs_path, method: :post do |form| %>
+  <%= form.label :graph_id, "Graph:" %><br>
+  <%= form.select :graph_id, options_for_select(graph_select_options), { prompt: 'Select' } %><br>
+
+  <%= form.submit %>
+<% end %>

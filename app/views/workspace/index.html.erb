@@ -1,0 +1,27 @@
+<h1 class="text-xl font-bold">Workspace</h1>
+<%= link_to 'New bookmark', new_bookmark_path %>
+
+<div class="grid grid-cols-1 gap-5 bg-gray-200 p-5">
+  <% if @bookmarks.any? %>
+    <% @bookmarks.each do |bookmark| %>
+      <div class="bg-gray-300 p-5">
+        <div class="flex justify-between">
+          <h2 class="text-lg"><%= bookmark.name %></h2>
+          <%= button_to '❌', bookmark, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </div>
+
+        <div class="grid grid-cols-2 gap-5 py-5">
+          <% bookmark.graphs.each do |graph| %>
+            <div>
+              <h3><%= graph.name %></h3>
+              <img src="http://placekitten.com/320/180" alt="kitten">
+            </div>
+          <% end %>
+          <div class="flex justify-center items-center border bg-gray-200">
+            <%= link_to '+ Add graph', new_bookmark_graph_path(bookmark.id), class: 'text-2xl' %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>

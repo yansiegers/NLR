@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root 'pages#home'
 
+  get 'workspace', to: 'workspace#index'
+
   namespace :graphs do
     resources :flight_hours, only: %i[index]
     resources :usage_spectrums, only: %i[index]
@@ -17,7 +19,9 @@ Rails.application.routes.draw do
   end
 
   resources :graphs
-  resources :bookmarks
+  resources :bookmarks do
+    resources :graphs, only: %i[new create], controller: 'bookmarks/graphs'
+  end
 
   namespace :system do
     resources :users
