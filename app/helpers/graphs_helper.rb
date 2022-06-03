@@ -2,7 +2,11 @@
 
 module GraphsHelper
   def graph_select_options
-    Graph.pluck(:name, :id).uniq
+    graph_ids = @bookmark&.graph_ids
+    Graph.where
+         .not(id: graph_ids)
+         .pluck(:name, :id)
+         .uniq
   end
 
   def graph_properties
