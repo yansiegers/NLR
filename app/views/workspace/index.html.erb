@@ -14,7 +14,8 @@
           <% bookmark.graphs.each do |graph| %>
             <div>
               <h3><%= graph.name %></h3>
-              <img src="http://placekitten.com/320/180" alt="kitten">
+              <%# <img src="http://placekitten.com/320/180" alt="kitten"> %>
+              <%= line_chart graph.data, xtitle: "Timestamp", ytitle: "Value" %>
               <%= button_to '❌', [bookmark, graph], method: :delete , data: { confirm: 'Are you sure?' } %>
             </div>
           <% end %>

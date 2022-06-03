@@ -5,4 +5,9 @@ class Graph < ApplicationRecord
   has_many :bookmarks, through: :graph_bookmarks
 
   validates :name, :property, presence: true
+
+  def data
+    MeasuringPoint.where(property:)
+                  .pluck(:timestamp, :value)
+  end
 end
