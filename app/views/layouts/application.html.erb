@@ -11,29 +11,12 @@
     <script src="https://cdn.plot.ly/plotly-2.12.1.min.js"></script>
   </head>
 
-  <body class="grid grid-cols-4 h-screen">
+  <body>
     <%= render "layouts/sidebar" %>
+    <%= render "layouts/header" %>
 
-    <main class="col-span-3 px-16 py-10">
-      <header class="p-5 flex justify-end">
-        <%= link_to 'Workspace', workspace_path, class: 'p-2' %>
-        <span class="p-2">
-          <%= @current_user.full_name %>
-        </span>
-      </header>
-
-      <% flash.each do |name, message| %>
-        <% if name == 'success' %>
-          <div class="flash-message flash-message__success">
-            <%= message %>
-          </div>
-        <% else %>
-          <div class="flash-message flash-message__error">
-            <%= message %>
-          </div>
-        <% end %>
-      <% end %>
-
+    <main class="px-16 py-10">
+      <%= render "layouts/flash_message" %>
       <%= yield %>
     </main>
   </body>

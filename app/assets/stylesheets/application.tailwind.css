@@ -3,6 +3,24 @@
 @tailwind utilities;
 
 @layer components {
+  body {
+    @apply grid;
+    grid-template-areas:
+      'sidebar header header header header header'
+      'sidebar main main main main main';
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto 1fr;
+  }
+  header {
+    grid-area: header;
+  }
+  aside {
+    grid-area: sidebar;
+  }
+  main {
+    grid-area: main;
+  }
+
   h1 {
     @apply text-xl font-bold mb-4;
   }
