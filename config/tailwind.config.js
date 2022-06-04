@@ -8,8 +8,22 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        'nlr-blue': {
+          DEFAULT: '#19AEE9',
+          dark: '#004D7D'
+        },
+        'nlr-orange': {
+          light: '#F8B985',
+          DEFAULT: '#ED7914'
+        },
+        'nlr-grey': {
+          light: '#F2F5FB',
+          DEFAULT: '#D8DEEB'
+        }
+      },
       fontFamily: {
-        sans: ['Inter var', ...defaultTheme.fontFamily.sans],
+        sans: ['Poppins', ...defaultTheme.fontFamily.sans],
       },
     },
   },

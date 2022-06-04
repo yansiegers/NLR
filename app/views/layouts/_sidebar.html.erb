@@ -1,50 +1,52 @@
-<aside class="bg-gray-100 p-5">
-  <a class="text-xl" href="/">NLR</a>
-
-  <hr class="border border-gray-200 my-6">
-
-  <span class="text-lg">Analysis</span>
-  <ol class="nav">
-    <li class="<%= class_names('link', { '-current': current_page?(root_path) } ) %>">
-      <%= link_to 'Home', root_path %>
-    </li>
-    <li class="<%= class_names('link', { '-current': current_page?(graphs_flight_hours_path) } ) %>">
-      <%= link_to 'Flight Hours', graphs_flight_hours_path %>
-    </li>
-    <li class="<%= class_names('link', { '-current': current_page?(graphs_usage_spectrums_path) } ) %>">
-      <%= link_to 'Usage Spectrum', graphs_usage_spectrums_path %>
-    </li>
-    <li class="<%= class_names('link', { '-current': current_page?(graphs_healths_path) } ) %>">
-      <%= link_to 'Health', graphs_healths_path %>
-    </li>
-    <li class="<%= class_names('link', { '-current': current_page?(graphs_weights_balances_path) } ) %>">
-      <%= link_to 'W&B', graphs_weights_balances_path %>
-    </li>
-    <li class="<%= class_names('link', { '-current': current_page?(graphs_suspensions_path) } ) %>">
-      <%= link_to 'Suspension', graphs_suspensions_path %>
-    </li>
-    <li class="<%= class_names('link', { '-current': current_page?(graphs_impacts_path) } ) %>">
-      <%= link_to 'Impact', graphs_impacts_path %>
-    </li>
-    <li class="<%= class_names('link', { '-current': current_page?(graphs_raw_streams_path) } ) %>">
-      <%= link_to 'Raw Stream', graphs_raw_streams_path %>
-    </li>
-  </ol>
-
-  <span class="text-lg">Statistics</span>
-  <ol class="nav">
-    <li class="<%= class_names('link', { '-current': current_page?(bookmarks_path) } ) %>">
-      <%= link_to 'Bookmarks', bookmarks_path %>
-    </li>
-    <li class="<%= class_names('link', { '-current': current_page?(graphs_path) } ) %>">
-      <%= link_to 'Graphs', graphs_path %>
-    </li>
-  </ol>
-
-  <span class="text-lg">System (admin-only)</span>
-  <ol class="nav">
-    <li class="<%= class_names('link', { '-current': current_page?(system_users_path) } ) %>">
-      <%= link_to 'Users', system_users_path %>
-    </li>
-  </ol>
+<aside class="bg-nlr-grey-light pt-20 flex flex-col gap-2">
+  <div class="px-10 py-4">
+    <a href="#">Real time</a>
+  </div>
+  <div class="px-10 py-4">
+    <a href="#">Raw data</a>
+  </div>
+  <div>
+    <div class="bg-white px-10 py-4 flex justify-between font-semibold text-nlr-blue">
+      <a href="#">Life span</a>
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
+      </svg>
+    </div>
+    <div class="flex flex-col ml-8 py-4 px-10 gap-2">
+      <%= link_to 'Center of Gravity', graphs_weights_balances_path, class: class_names('link', { '-current': current_page?(graphs_weights_balances_path) } ) %>
+      <%= link_to 'Weight', graphs_weights_balances_path, class: class_names('link', { '-current': current_page?(graphs_weights_balances_path) } ) %>
+      <%= link_to 'Shock absorber degradation', graphs_suspensions_path, class: class_names('link', { '-current': current_page?(graphs_suspensions_path) } ) %>
+      <%= link_to 'Flight hours', graphs_flight_hours_path, class: class_names('link', { '-current': current_page?(graphs_flight_hours_path) } ) %>
+      <%= link_to 'Usage spectrum', graphs_usage_spectrums_path, class: class_names('link', { '-current': current_page?(graphs_usage_spectrums_path) } ) %>
+      <%= link_to 'Impact', graphs_impacts_path, class: class_names('link', { '-current': current_page?(graphs_impacts_path) } ) %>
+      <%# <%= link_to 'Health', graphs_healths_path, class: class_names('link', { '-current': current_page?(graphs_healths_path) } ) %>
+      <%# <%= link_to 'Raw Stream', graphs_raw_streams_path, class: class_names('link', { '-current': current_page?(graphs_raw_streams_path) } ) %>
+    </div>
+  </div>
+  <div>
+    <div class="bg-white px-10 py-4 flex justify-between font-semibold text-nlr-blue">
+      <a href="#">Admin</a>
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
+      </svg>
+    </div>
+    <div class="flex flex-col ml-8 py-4 px-10 gap-2">
+      <%= link_to 'Home', root_path, class: class_names('link', { '-current': current_page?(root_path) } ) %>
+      <%= link_to 'Bookmarks', bookmarks_path, class: class_names('link', { '-current': current_page?(bookmarks_path) } ) %>
+      <%= link_to 'Graphs', graphs_path, class: class_names('link', { '-current': current_page?(graphs_path) } ) %>
+      <%= link_to 'Users', system_users_path, class: class_names('link', { '-current': current_page?(system_users_path) } ) %>
+    </div>
+  </div>
+  <div>
+    <div class="bg-white px-10 py-4 flex justify-between font-semibold text-nlr-blue">
+      <a href="#">Other</a>
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
+      </svg>
+    </div>
+    <div class="flex flex-col ml-8 py-4 px-10 gap-2">
+      <%= link_to 'Health', graphs_healths_path, class: class_names('link', { '-current': current_page?(graphs_healths_path) } ) %>
+      <%= link_to 'Raw Stream', graphs_raw_streams_path, class: class_names('link', { '-current': current_page?(graphs_raw_streams_path) } ) %>
+    </div>
+  </div>
 </aside>
