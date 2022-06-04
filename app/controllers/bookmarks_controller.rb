@@ -1,11 +1,13 @@
 # frozen_string_literal: true
 
 class BookmarksController < ApplicationController
-  before_action :find_bookmark, only: %i[edit update destroy]
+  before_action :find_bookmark, only: %i[show edit update destroy]
 
   def index
     @bookmarks = Bookmark.all
   end
+
+  def show; end
 
   def new
     @bookmark = Bookmark.new

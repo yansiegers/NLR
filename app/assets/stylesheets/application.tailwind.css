@@ -56,6 +56,9 @@
   .btn {
     @apply px-3 py-2 text-white bg-blue-500 rounded;
   }
+  a.btn:hover {
+    @apply underline;
+  }
   .btn__secondary {
     @apply text-blue-500 bg-white border border-blue-500;
   }
