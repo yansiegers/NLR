@@ -2,7 +2,7 @@
 
 module Graphs
   # Controls usage spectrums
-  class UsageSpectrumsController < ApplicationController
+  class UsageSpectrumsController < EngineersDashboardController
     def index; end
   end
 end

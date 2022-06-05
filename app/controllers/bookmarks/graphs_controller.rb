@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Bookmarks
-  class GraphsController < ApplicationController
+  class GraphsController < EngineersDashboardController
     before_action :find_bookmark, only: %i[new create destroy]
     before_action :find_graph, only: %i[destroy]
 

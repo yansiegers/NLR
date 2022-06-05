@@ -2,7 +2,7 @@
 
 module Graphs
   # Controls healths
-  class HealthsController < ApplicationController
+  class HealthsController < EngineersDashboardController
     def index; end
   end
 end

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class WorkspaceController < ApplicationController
+class WorkspaceController < EngineersDashboardController
   def index
     return Bookmark.all unless current_user
 

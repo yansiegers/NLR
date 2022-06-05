@@ -2,7 +2,7 @@
 
 module Graphs
   # Controls flight hours
-  class FlightHoursController < ApplicationController
+  class FlightHoursController < EngineersDashboardController
     def index; end
   end
 end

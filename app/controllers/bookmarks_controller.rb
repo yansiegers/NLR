@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class BookmarksController < ApplicationController
+class BookmarksController < EngineersDashboardController
   before_action :find_bookmark, only: %i[show edit update destroy]
 
   def index
