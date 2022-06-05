@@ -1,0 +1,19 @@
+<h1 class="pb-5"><%= "Hello #{current_user.full_name || 'anonimous user'}!" %></h1>
+
+<div class="grid grid-cols-2 gap-14 bg-nlr-grey-light p-14">
+  <table>
+    <tr>
+      <td class="font-semibold">Name:</td>
+      <td><%= current_user.full_name || 'Not set' %></td>
+    </tr>
+    <tr>
+      <td class="font-semibold">Email address:</td>
+      <td><%= current_user.email %></td>
+    </tr>
+  </table>
+
+  <div class="flex flex-col gap-2">
+    <%= link_to 'Edit account', edit_user_registration_path, class: 'btn' %>
+    <%= button_to 'Delete account', user_registration_path, method: :delete, class: 'btn btn__tertiary', data: { confirm: 'Are you sure?' } %>
+  </div>
+</div>

@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   get 'workspace', to: 'workspace#index'
+  get 'account', to: 'account#show'
 
   namespace :graphs do
     resources :flight_hours, only: %i[index]

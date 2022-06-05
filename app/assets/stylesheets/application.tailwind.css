@@ -72,6 +72,9 @@
   .btn__secondary {
     @apply text-nlr-blue-dark bg-nlr-grey-light font-normal;
   }
+  .btn__tertiary {
+    @apply text-white bg-nlr-orange font-semibold;
+  }
 
   .flash-message {
     @apply p-4 my-8 border-sky-500 bg-sky-200;
