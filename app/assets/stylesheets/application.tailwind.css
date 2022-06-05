@@ -24,20 +24,20 @@
   }
 
   h1 {
-    @apply text-xl font-semibold mb-4;
+    @apply text-xl font-semibold;
   }
 
   .nav {
-    @apply my-6 flex flex-col gap-2;
+    @apply my-6 flex flex-col gap-8;
   }
   .nav.-inline {
     @apply flex flex-row;
   }
   .nav li {
-    @apply px-3 py-2 text-blue-600;
+    @apply px-3 py-2 bg-nlr-grey-light;
   }
   .nav li.-current {
-    @apply text-white bg-blue-500 rounded;
+    @apply text-white bg-nlr-blue font-semibold;
   }
   .nav li a:hover,
   .nav li.-current a:hover {
@@ -45,14 +45,14 @@
   }
 
   thead:first-child {
-    @apply sticky top-0 border-b border-gray-200 bg-white
+    @apply sticky top-0 border-b border-nlr-grey bg-white
   }
   th, td {
     @apply p-2
   }
 
   input[type=submit] {
-    @apply p-2 mt-4 text-white bg-blue-500 rounded cursor-pointer;
+    @apply p-2 mt-4 text-white bg-nlr-blue font-semibold cursor-pointer;
   }
 
   .link {
@@ -63,13 +63,13 @@
   }
 
   .btn {
-    @apply px-3 py-2 text-white bg-blue-500 rounded;
+    @apply px-3 py-2 text-white bg-nlr-blue font-semibold;
   }
   a.btn:hover {
     @apply underline;
   }
   .btn__secondary {
-    @apply text-blue-500 bg-white border border-blue-500;
+    @apply text-nlr-blue-dark bg-nlr-grey-light font-normal;
   }
 
   .flash-message {

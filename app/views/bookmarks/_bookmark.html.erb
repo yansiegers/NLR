@@ -1,0 +1,39 @@
+<div class="bg-white p-14">
+  <div class="flex justify-between">
+    <h1><%= bookmark.name %></h1>
+    <div class="flex justify-end gap-2">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
+      </svg>
+      <%= button_to bookmark, method: :delete, data: { confirm: 'Are you sure?' } do %>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-2 gap-5 py-5">
+    <% bookmark.graphs.each do |graph| %>
+      <div>
+        <div class="flex justify-between">
+          <h2 class="mb-2"><%= graph.name %></h2>
+          <%= button_to [bookmark, graph], method: :delete , data: { confirm: 'Are you sure?' } do %>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          <% end %>
+        </div>
+        <%= line_chart graph.data, xtitle: 'Timestamp', ytitle: 'Value', height: '20rem' %>
+      </div>
+    <% end %>
+    <div class="flex justify-center items-center border border-nlr-grey h-80">
+      <%= link_to new_bookmark_graph_path(bookmark.id), class: 'text-2xl flex gap-2' do %>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M17 14v6m-3-3h6M6 10h2a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2zm10 0h2a2 2 0 002-2V6a2 2 0 00-2-2h-2a2 2 0 00-2 2v2a2 2 0 002 2zM6 20h2a2 2 0 002-2v-2a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2z" />
+        </svg>
+        <span>Add graph</span>
+      <% end%>
+    </div>
+  </div>
+</div>
