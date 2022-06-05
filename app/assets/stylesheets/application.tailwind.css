@@ -65,7 +65,8 @@
   .btn {
     @apply px-3 py-2 text-white bg-nlr-blue font-semibold;
   }
-  a.btn:hover {
+  a.btn:hover,
+  button.btn:hover {
     @apply underline;
   }
   .btn__secondary {
