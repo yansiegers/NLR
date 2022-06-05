@@ -46,7 +46,7 @@ class System::UsersController < ApplicationController
 
   def user_params
     params.require(:user)
-          .permit(:full_name, :email_address, :password)
+          .permit(:full_name, :email, :password)
   end
 
   def find_user
