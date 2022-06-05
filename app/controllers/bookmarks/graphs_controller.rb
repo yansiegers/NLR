@@ -31,6 +31,8 @@ module Bookmarks
     private
 
     def find_bookmark
+      return Bookmark.all unless current_user
+
       @bookmark = current_user.bookmarks.find(params[:bookmark_id])
     end
 

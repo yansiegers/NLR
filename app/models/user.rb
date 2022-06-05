@@ -3,6 +3,11 @@
 class User < ApplicationRecord
   has_many :bookmarks
 
-  validates :full_name, :email_address, :password, presence: true
-  validates :email_address, format: { with: URI::MailTo::EMAIL_REGEXP }
+  validates :email, :password, presence: true
+  validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
+
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable
 end

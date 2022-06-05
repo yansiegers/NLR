@@ -1,6 +1,6 @@
 <header class="p-14 flex justify-between">
   <div class="flex justify-start gap-8">
-    <% @quick_bookmarks.limit(4).each do |quick_bookmark, index| %>
+    <% @quick_bookmarks.each do |quick_bookmark, index| %>
       <%= link_to quick_bookmark.name, bookmark_path(quick_bookmark), class: class_names('btn', { 'btn__secondary': !current_page?(bookmark_path(quick_bookmark)) }) %>
     <% end %>
     <%= link_to 'More...', bookmarks_path, class: 'btn btn__secondary' if @quick_bookmarks.any? %>
@@ -12,7 +12,7 @@
       </svg>
     <% end %>
     <span class="btn btn__secondary">
-      <%= @current_user.full_name %>
+      <%= current_user.full_name || 'Anonimous user' %>
     </span>
   </div>
 </header>

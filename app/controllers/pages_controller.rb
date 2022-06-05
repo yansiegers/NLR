@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 # Controls loose pages such as home and contact
-class PagesController < ApplicationController
+class PagesController < EngineersDashboardController
   def home
     @properties = MeasuringPoint.pluck(:property).uniq
 
