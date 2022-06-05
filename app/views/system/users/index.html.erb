@@ -1,5 +1,4 @@
-<h1>Users</h1>
-<%= link_to 'New user', new_system_user_path %>
+<h1 class="pb-5">Users</h1>
 
 <% if @users.any? %>
   <table>
@@ -8,7 +7,6 @@
         <th>ID</th>
         <th>Full name</th>
         <th>Email address</th>
-        <th>Password</th>
         <th>Created at</th>
         <th>Updated at</th>
       </tr>
@@ -19,15 +17,8 @@
           <td><%= user.id %></td>
           <td><%= user.full_name %></td>
           <td><%= user.email %></td>
-          <td><%= user.password %></td>
           <td><%= user.created_at %></td>
           <td><%= user.updated_at %></td>
-          <td>
-            <%= link_to 'Edit', edit_system_user_path(user) %>
-          </td>
-          <td>
-            <%= button_to 'Delete', [:system, user], method: :delete, data: { confirm: 'Are you sure?' } %>
-          </td>
         </tr>
       <% end %>
     </tbody>
