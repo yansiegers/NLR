@@ -15,7 +15,7 @@
       <% @users.each do |user| %>
         <tr>
           <td><%= user.id %></td>
-          <td><%= user.full_name %></td>
+          <td><%= link_to user.full_name, system_user_path(user) %></td>
           <td><%= user.email %></td>
           <td><%= user.created_at %></td>
           <td><%= user.updated_at %></td>

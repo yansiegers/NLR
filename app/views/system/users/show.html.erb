@@ -1,0 +1,27 @@
+<h1 class="pb-5"><%= "User: #{current_user.full_name || 'Anonymous user'}" %></h1>
+
+<div class="grid grid-cols-2 gap-14 bg-nlr-grey-light p-14">
+  <table>
+    <tr>
+      <td class="font-semibold">Name:</td>
+      <td><%= current_user.full_name || 'Not set' %></td>
+    </tr>
+    <tr>
+      <td class="font-semibold">Email address:</td>
+      <td><%= current_user.email %></td>
+    </tr>
+  </table>
+
+  <div>
+    <h2>Roles</h2>
+    <% if @user.roles %>
+      <ul class="flex flex-col gap-2 list-disc ml-6">
+        <% @user.roles.each do |role| %>
+          <li><%= role.name %></li>
+        <% end %>
+      </ul>
+    <% else %>
+      No roles assigned.
+    <% end %>
+  </div>
+</div>

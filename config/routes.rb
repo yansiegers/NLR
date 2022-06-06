@@ -27,7 +27,7 @@ Rails.application.routes.draw do
   end
 
   namespace :system do
-    resources :users, only: %i[index]
+    resources :users, only: %i[index show]
     resources :roles, except: %i[show]
   end
 end
