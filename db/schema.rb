@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_05_134136) do
+ActiveRecord::Schema[7.0].define(version: 2022_06_06_160632) do
   create_table "bookmarks", force: :cascade do |t|
     t.string "name"
     t.integer "user_id", null: false
@@ -42,6 +42,20 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_05_134136) do
     t.decimal "value", precision: 15, scale: 10
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "roles", force: :cascade do |t|
+    t.string "name"
+    t.string "utility_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "roles_users", id: false, force: :cascade do |t|
+    t.integer "role_id"
+    t.integer "user_id"
+    t.index ["role_id"], name: "index_roles_users_on_role_id"
+    t.index ["user_id"], name: "index_roles_users_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

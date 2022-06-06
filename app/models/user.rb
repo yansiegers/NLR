@@ -2,6 +2,7 @@
 
 class User < ApplicationRecord
   has_many :bookmarks
+  has_and_belongs_to_many :roles
 
   validates :email, :password, presence: true
   validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
