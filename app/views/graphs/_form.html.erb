@@ -1,0 +1,9 @@
+<%= form_with model: @graph do |form| %>
+  <%= form.label :name, 'Name:'%><br>
+  <%= form.text_field :name %><br>
+
+  <%= form.label :propery, "Property:" %><br>
+  <%= form.select :property, graph_properties, { prompt: 'Select' } %><br>
+
+  <%= form.submit %>
+<% end %>

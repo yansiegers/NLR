@@ -1,0 +1,59 @@
+<h1 class="text-xl font-bold">NLR Dashboard</h1>
+
+<ol class="nav -inline flex">
+  <li class="<%= class_names('link', { '-current': current_page?(root_path, check_parameters: true) } ) %>">
+    <%= link_to 'All', root_path %>
+  </li>
+  <% @properties.each do |property| %>
+    <li class="<%= class_names('link', { '-current': current_page?(root_path(filter: property)) } ) %>">
+      <%= link_to property, root_path(filter: property) %>
+    </li>
+  <% end %>
+</ol>
+
+<%= line_chart @data, xtitle: "Timestamp", ytitle: "Value" if params[:filter] %>
+
+
+<% if @measuring_points.any? && params[:filter] %>
+  <table>
+    <thead>
+      <tr>
+        <th>Timestamp</th>
+        <th>Value</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @measuring_points.each do |measuring_point| %>
+        <tr>
+          <td><%= measuring_point.timestamp %></td>
+          <td><%= measuring_point.value %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% elsif @measuring_points.any? && !params[:filter] %>
+  <table>
+    <thead>
+      <tr>
+        <th>Timestamp</th>
+        <% @properties.each do |property| %>
+          <th><%= property %></th>
+        <% end %>
+      </tr>
+    </thead>
+    <tbody>
+      <% @measuring_points.each do |measuring_point| %>
+        <tr>
+          <td><%= measuring_point[0] %></td>
+          <% measuring_point[1].each do |value| %>
+            <td>
+              <%= value %>
+            </td>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p>No data</p>
+<% end %>

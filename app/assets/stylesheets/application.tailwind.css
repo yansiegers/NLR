@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  h1 {
+    @apply text-xl font-bold mb-4;
+  }
+
+  ol.nav {
+    @apply my-6;
+  }
+  ol.nav.-inline {
+    @apply flex
+  }
+  li {
+    @apply p-2 text-blue-600;
+  }
+  li.-current {
+    @apply text-white bg-blue-500 rounded;
+  }
+  li.-current a:hover {
+    @apply underline;
+  }
+
+  thead:first-child {
+    @apply sticky top-0 border-b border-gray-200 bg-white
+  }
+  th, td {
+    @apply p-2
+  }
+
+  input[type=submit] {
+    @apply p-2 mt-4 text-white bg-blue-500 rounded cursor-pointer;
+  }
+}

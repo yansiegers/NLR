@@ -1,0 +1,50 @@
+<aside class="bg-gray-100 p-5">
+  <a class="text-xl" href="/">NLR</a>
+
+  <hr class="border border-gray-200 my-6">
+
+  <span class="text-lg">Analysis</span>
+  <ol class="nav">
+    <li class="<%= class_names('link', { '-current': current_page?(root_path) } ) %>">
+      <%= link_to 'Home', root_path %>
+    </li>
+    <li class="<%= class_names('link', { '-current': current_page?(graphs_flight_hours_path) } ) %>">
+      <%= link_to 'Flight Hours', graphs_flight_hours_path %>
+    </li>
+    <li class="<%= class_names('link', { '-current': current_page?(graphs_usage_spectrums_path) } ) %>">
+      <%= link_to 'Usage Spectrum', graphs_usage_spectrums_path %>
+    </li>
+    <li class="<%= class_names('link', { '-current': current_page?(graphs_healths_path) } ) %>">
+      <%= link_to 'Health', graphs_healths_path %>
+    </li>
+    <li class="<%= class_names('link', { '-current': current_page?(graphs_weights_balances_path) } ) %>">
+      <%= link_to 'W&B', graphs_weights_balances_path %>
+    </li>
+    <li class="<%= class_names('link', { '-current': current_page?(graphs_suspensions_path) } ) %>">
+      <%= link_to 'Suspension', graphs_suspensions_path %>
+    </li>
+    <li class="<%= class_names('link', { '-current': current_page?(graphs_impacts_path) } ) %>">
+      <%= link_to 'Impact', graphs_impacts_path %>
+    </li>
+    <li class="<%= class_names('link', { '-current': current_page?(graphs_raw_streams_path) } ) %>">
+      <%= link_to 'Raw Stream', graphs_raw_streams_path %>
+    </li>
+  </ol>
+
+  <span class="text-lg">Statistics</span>
+  <ol class="nav">
+    <li class="<%= class_names('link', { '-current': current_page?(bookmarks_path) } ) %>">
+      <%= link_to 'Bookmarks', bookmarks_path %>
+    </li>
+    <li class="<%= class_names('link', { '-current': current_page?(graphs_path) } ) %>">
+      <%= link_to 'Graphs', graphs_path %>
+    </li>
+  </ol>
+
+  <span class="text-lg">System (admin-only)</span>
+  <ol class="nav">
+    <li class="<%= class_names('link', { '-current': current_page?(system_users_path) } ) %>">
+      <%= link_to 'Users', system_users_path %>
+    </li>
+  </ol>
+</aside>
