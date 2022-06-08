@@ -5,7 +5,7 @@
 
 puts 'Seeding...'
 
-User.create(full_name: 'User Test', email: 'admin@nlr.com', password: 'testen', password_confirmation: 'testen')
+# User.create(full_name: 'User Test', email: 'admin@nlr.com', password: 'testen', password_confirmation: 'testen')
 User.last.bookmarks.create(name: 'Test Bookmark', favorite: false)
 Bookmark.last.graphs << Graph.create(name: 'Test Graph', property: 'COG_dev_y')
 
