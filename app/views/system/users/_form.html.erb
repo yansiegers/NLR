@@ -1,0 +1,14 @@
+<%= render partial: 'partials/form_errors', locals: { object: @user } %>
+
+<%= form_with model: [:system, @user] do |form| %>
+  <%= form.label :full_name, 'Full name:' %><br>
+  <%= form.text_field :full_name %><br>
+
+  <%= form.label :email_address, 'Email address:' %><br>
+  <%= form.email_field :email_address %><br>
+
+  <%= form.label :password, 'Password:' %><br>
+  <%= form.password_field :password %><br>
+
+  <%= form.submit %>
+<% end %>
