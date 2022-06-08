@@ -20,7 +20,7 @@ Rails.application.routes.draw do
 
   resources :graphs
   resources :bookmarks do
-    resources :graphs, only: %i[new create destroy], controller: 'bookmarks/graphs'
+    resources :graphs, only: %i[destroy], controller: 'bookmarks/graphs'
   end
 
   namespace :system do
