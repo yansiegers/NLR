@@ -10,5 +10,10 @@
   <%= form.label :user_id, "User:" %><br>
   <%= form.select :user_id, options_for_select(user_select_options), { prompt: 'Select' } %><br>
 
+  <%= form.collection_check_boxes :graph_ids, Graph.all, :id, :name do |graph| %>
+    <%= graph.check_box %>
+    <%= graph.label %><br>
+  <% end %>
+
   <%= form.submit %>
 <% end %>
