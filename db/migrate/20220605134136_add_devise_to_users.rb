@@ -2,6 +2,9 @@
 
 class AddDeviseToUsers < ActiveRecord::Migration[7.0]
   def self.up
+    # User.first.bookmarks.destroy
+    # User.first.delete
+
     change_table :users do |t|
       ## Database authenticatable
       t.rename :email_address, :email
