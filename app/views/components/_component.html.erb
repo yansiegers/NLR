@@ -1,0 +1,28 @@
+<div id="<%= dom_id component %>">
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Name:</strong>
+    <%= component.name %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Stress:</strong>
+    <%= component.stress %>
+  </p>
+
+<!--
+  <p>
+    This compontent was last modified <%= time_tag post.created_at, "data-local": "time-age"%>
+  </p> 
+
+
+  <p>
+    <strong><%= pluralize component.information.count, "remarks" %></strong>
+  </p>
+-->
+
+  <% if action_name != "show" %>
+    <%= link_to "Show this component", component, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to 'Edit this component', edit_component_path(component), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <hr class="mt-6">
+  <% end %>
+</div>
