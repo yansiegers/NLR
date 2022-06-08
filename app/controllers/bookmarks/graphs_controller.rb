@@ -2,21 +2,8 @@
 
 module Bookmarks
   class GraphsController < EngineersDashboardController
-    before_action :find_bookmark, only: %i[new create destroy]
+    before_action :find_bookmark, only: %i[destroy]
     before_action :find_graph, only: %i[destroy]
-
-    def new; end
-
-    def create
-      if @bookmark.graphs << Graph.find(params[:graph_id])
-        flash[:success] = 'Graph successfully added to bookmark'
-        redirect_to workspace_path
-      else
-        # FIXME: Does not work like intended, it doesn't get here on validation error
-        flash[:error] = 'Something went wrong'
-        render :new, status: :unprocessable_entity
-      end
-    end
 
     def destroy
       if @bookmark.graphs.delete(@graph)

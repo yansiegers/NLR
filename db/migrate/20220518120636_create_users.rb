@@ -9,5 +9,7 @@ class CreateUsers < ActiveRecord::Migration[7.0]
 
       t.timestamps
     end
+
+    User.create(full_name: 'User Test', email_address: 'info@example.com', password: 'test')
   end
 end

@@ -20,13 +20,13 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_06_160632) do
     t.index ["user_id"], name: "index_bookmarks_on_user_id"
   end
 
-  create_table "graph_bookmarks", force: :cascade do |t|
-    t.integer "graph_id", null: false
-    t.integer "bookmark_id", null: false
+  create_table "bookmarks_graphs", force: :cascade do |t|
+    t.integer "bookmark_id"
+    t.integer "graph_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["bookmark_id"], name: "index_graph_bookmarks_on_bookmark_id"
-    t.index ["graph_id"], name: "index_graph_bookmarks_on_graph_id"
+    t.index ["bookmark_id"], name: "index_bookmarks_graphs_on_bookmark_id"
+    t.index ["graph_id"], name: "index_bookmarks_graphs_on_graph_id"
   end
 
   create_table "graphs", force: :cascade do |t|
@@ -73,6 +73,4 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_06_160632) do
   end
 
   add_foreign_key "bookmarks", "users"
-  add_foreign_key "graph_bookmarks", "bookmarks"
-  add_foreign_key "graph_bookmarks", "graphs"
 end

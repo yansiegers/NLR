@@ -5,8 +5,20 @@
 
 puts 'Seeding...'
 
-# User.create(full_name: 'User Test', email: 'admin@nlr.com', password: 'testen', password_confirmation: 'testen')
-User.last.bookmarks.create(name: 'Test Bookmark', favorite: false)
-Bookmark.last.graphs << Graph.create(name: 'Test Graph', property: 'COG_dev_y')
+user = User.last # created in user db migration
+
+bookmark1 = user.bookmarks.create(name: 'Weight & balance', favorite: false)
+bookmark2 = user.bookmarks.create(name: 'Temperature', favorite: false)
+bookmark3 = user.bookmarks.create(name: 'Speed', favorite: false)
+
+bookmark1.graphs << Graph.create([
+  { name: 'Weight', property: 'Weight' },
+  { name: 'Center of gravity deviation Y', property: 'COG_dev_y' }
+])
+bookmark2.graphs << Graph.create([
+  { name: 'Temperature front left', property: 'temp_front_left' },
+  { name: 'Temperature front right', property: 'temp_front_right' }
+])
+bookmark3.graphs << Graph.create(name: 'Pitot tube', property: 'pitot_tube')
 
 puts 'Seeding done.'

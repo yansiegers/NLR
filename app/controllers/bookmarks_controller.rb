@@ -48,7 +48,12 @@ class BookmarksController < EngineersDashboardController
 
   def bookmark_params
     params.require(:bookmark)
-          .permit(:name, :favorite, :user_id)
+          .permit(
+            :name,
+            :favorite,
+            :user_id,
+            graph_ids: []
+          )
   end
 
   def find_bookmark
