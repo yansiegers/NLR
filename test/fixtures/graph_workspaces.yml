@@ -2,8 +2,8 @@
 
 one:
   graph: one
-  bookmark: one
+  workspace: one
 
 two:
   graph: two
-  bookmark: two
+  workspace: two

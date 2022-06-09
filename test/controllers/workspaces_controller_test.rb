@@ -1,6 +1,6 @@
 require "test_helper"
 
-class GraphBookmarkTest < ActiveSupport::TestCase
+class WorkspacesControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end
