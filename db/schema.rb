@@ -10,23 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_18_121023) do
-  create_table "bookmarks", force: :cascade do |t|
+ActiveRecord::Schema[7.0].define(version: 2022_06_09_091754) do
+  create_table "graph_categories", force: :cascade do |t|
     t.string "name"
-    t.integer "user_id", null: false
-    t.boolean "favorite"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_bookmarks_on_user_id"
-  end
-
-  create_table "bookmarks_graphs", force: :cascade do |t|
-    t.integer "bookmark_id"
-    t.integer "graph_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["bookmark_id"], name: "index_bookmarks_graphs_on_bookmark_id"
-    t.index ["graph_id"], name: "index_bookmarks_graphs_on_graph_id"
   end
 
   create_table "graphs", force: :cascade do |t|
@@ -34,6 +22,17 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_18_121023) do
     t.string "property"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "graph_category_id"
+    t.index ["graph_category_id"], name: "index_graphs_on_graph_category_id"
+  end
+
+  create_table "graphs_workspaces", force: :cascade do |t|
+    t.integer "workspace_id"
+    t.integer "graph_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["graph_id"], name: "index_graphs_workspaces_on_graph_id"
+    t.index ["workspace_id"], name: "index_graphs_workspaces_on_workspace_id"
   end
 
   create_table "measuring_points", force: :cascade do |t|
@@ -52,5 +51,14 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_18_121023) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "bookmarks", "users"
+  create_table "workspaces", force: :cascade do |t|
+    t.string "name"
+    t.integer "user_id", null: false
+    t.boolean "favorite"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_workspaces_on_user_id"
+  end
+
+  add_foreign_key "workspaces", "users"
 end

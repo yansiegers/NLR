@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Graph < ApplicationRecord
-  has_and_belongs_to_many :bookmarks
+  has_and_belongs_to_many :workspaces
 
   validates :name, :property, presence: true
 
