@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class ApplicationController < ActionController::Base
-  before_action :current_user, :gather_bookmarks
+  before_action :current_user, :gather_workspaces
 
   def current_user
     # return unless session[:user_id]
@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
 
   private
 
-  def gather_bookmarks
-    @quick_bookmarks = current_user.bookmarks
+  def gather_workspaces
+    @quick_workspaces = current_user.workspaces.limit(4)
   end
 end

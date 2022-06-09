@@ -2,7 +2,7 @@
 
 module GraphsHelper
   def graph_select_options
-    graph_ids = @bookmark&.graph_ids
+    graph_ids = @workspace&.graph_ids
     Graph.where
          .not(id: graph_ids)
          .pluck(:name, :id)

@@ -1,6 +1,6 @@
-<%= render partial: 'partials/form_errors', locals: { object: @bookmark } %>
+<%= render partial: 'partials/form_errors', locals: { object: @workspace } %>
 
-<%= form_with model: @bookmark do |form| %>
+<%= form_with model: @workspace do |form| %>
   <%= form.label :name, 'Name:' %><br>
   <%= form.text_field :name %><br>
 
