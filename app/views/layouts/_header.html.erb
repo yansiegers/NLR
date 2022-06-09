@@ -1,9 +1,18 @@
 <header class="p-14 flex justify-between">
   <div class="flex justify-start gap-8">
-    <% @quick_workspaces.each do |quick_workspace, index| %>
-      <%= link_to quick_workspace.name, workspace_path(quick_workspace), class: class_names('btn', { 'btn__secondary': !current_page?(workspace_path(quick_workspace)) }) %>
+    <% if @graph_categories %>
+      <% GraphCategory.all.each do |graph_category| %>
+        <% if @graph_categories.exists?(id: graph_category.id) %>
+          <span class="btn">
+            <%= graph_category.name %>
+          </span>
+        <% else %>
+          <span class="btn btn__secondary">
+            <%= graph_category.name %>
+          </span>
+        <% end %>
+      <% end %>
     <% end %>
-    <%= link_to 'More...', workspaces_path, class: 'btn btn__secondary' if @quick_workspaces.any? %>
   </div>
   <div class="flex justify-end gap-8">
     <%= link_to dashboard_path, class: class_names('btn', { 'btn__secondary': !current_page?(dashboard_path) }) do %>

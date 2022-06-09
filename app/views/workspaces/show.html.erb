@@ -1,5 +1,5 @@
 <div class="grid grid-cols-1 gap-14 bg-nlr-grey-light p-14">
-  <% @graph_categories.each do |graph_category| %>
+  <% @graph_categories.uniq.each do |graph_category| %>
     <%= render 'graph_category', graph_category: graph_category %>
   <% end %>
 </div>
