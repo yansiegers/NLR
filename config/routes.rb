@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   end
 
   resources :graphs
+  resources :graph_categories
   resources :workspaces do
     resources :graphs, only: %i[destroy], controller: 'workspaces/graphs'
   end

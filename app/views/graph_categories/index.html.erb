@@ -1,0 +1,33 @@
+<h1>Graph categories</h1>
+<%= link_to 'New graph category', new_graph_category_path %>
+
+<% if @graph_categories.any? %>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Graphs</th>
+        <th>Created at</th>
+        <th>Updated at</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @graph_categories.each do |graph_category| %>
+        <tr>
+          <td><%= graph_category.id %></td>
+          <td><%= graph_category.name %></td>
+          <td><%= graph_category.graphs.count %></td>
+          <td><%= graph_category.created_at %></td>
+          <td><%= graph_category.updated_at %></td>
+          <td>
+            <%= link_to 'Edit', edit_graph_category_path(graph_category) %>
+          </td>
+          <td>
+            <%= button_to 'Delete', graph_category, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>

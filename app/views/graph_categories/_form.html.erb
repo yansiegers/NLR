@@ -1,0 +1,13 @@
+<%= render partial: 'partials/form_errors', locals: { object: @graph_category } %>
+
+<%= form_with model: @graph_category do |form| %>
+  <%= form.label :name, 'Name:' %><br>
+  <%= form.text_field :name %><br>
+
+  <%= form.collection_check_boxes :graph_ids, Graph.all, :id, :name do |graph| %>
+    <%= graph.check_box %>
+    <%= graph.label %><br>
+  <% end %>
+
+  <%= form.submit %>
+<% end %>

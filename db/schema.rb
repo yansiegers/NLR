@@ -60,5 +60,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_09_091754) do
     t.index ["user_id"], name: "index_workspaces_on_user_id"
   end
 
+  add_foreign_key "graphs", "graph_categories"
   add_foreign_key "workspaces", "users"
 end
