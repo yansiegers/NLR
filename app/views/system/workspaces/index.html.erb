@@ -1,5 +1,5 @@
 <h1 class="text-xl font-bold">Workspaces</h1>
-<%= link_to 'New workspace', new_workspace_path %>
+<%= link_to 'New workspace', new_system_workspace_path %>
 
 <% if @workspaces.any? %>
   <table>
@@ -29,10 +29,10 @@
           <td><%= workspace.created_at %></td>
           <td><%= workspace.updated_at %></td>
           <td>
-            <%= link_to 'Edit', edit_workspace_path(workspace) %>
+            <%= link_to 'Edit', edit_system_workspace_path(workspace) %>
           </td>
           <td>
-            <%= button_to 'Delete', workspace, method: :delete, data: { confirm: 'Are you sure?' } %>
+            <%= button_to 'Delete', [:system, workspace], method: :delete, data: { confirm: 'Are you sure?' } %>
           </td>
         </tr>
       <% end %>

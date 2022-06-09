@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   root 'pages#home'
 
   get 'dashboard', to: 'dashboard#index'
+  resources :workspaces, except: %i[index]
 
   namespace :graphs do
     resources :flight_hours, only: %i[index]
@@ -25,6 +26,7 @@ Rails.application.routes.draw do
   end
 
   namespace :system do
+    resources :workspaces
     resources :users
   end
 end
