@@ -7,7 +7,9 @@ class WorkspacesController < ApplicationController
     @workspaces = Workspace.all
   end
 
-  def show; end
+  def show
+    @graph_categories = @workspace.graph_categories.uniq
+  end
 
   def new
     @workspace = Workspace.new

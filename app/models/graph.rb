@@ -2,6 +2,7 @@
 
 class Graph < ApplicationRecord
   has_and_belongs_to_many :workspaces
+  belongs_to :graph_category, inverse_of: :graphs
 
   validates :name, :property, presence: true
 
