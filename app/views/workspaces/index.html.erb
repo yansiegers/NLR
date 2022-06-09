@@ -1,5 +1,5 @@
-<div class="flex justify-between pb-5">
-  <h1>Dashboard</h1>
+<div class="flex justify-between items-center mb-8">
+  <h1 class="text-xl font-bold">Workspaces</h1>
   <%= link_to new_workspace_path, class: 'flex gap-2' do %>
     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
       <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
@@ -8,10 +8,8 @@
   <% end %>
 </div>
 
-<div class="grid grid-cols-1 gap-14 bg-nlr-grey-light p-14">
-  <% if @workspaces.any? %>
-    <% @workspaces.each do |workspace| %>
-      <%= render 'workspaces/workspace', workspace: workspace %>
-    <% end %>
+<div class="grid grid-cols-2 gap-14 bg-nlr-grey-light p-14">
+  <% @workspaces.each do |workspace| %>
+    <%= render 'workspace', workspace: workspace %>
   <% end %>
 </div>

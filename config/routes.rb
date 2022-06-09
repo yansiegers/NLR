@@ -6,8 +6,8 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root 'pages#home'
 
-  get 'dashboard', to: 'dashboard#index'
-  resources :workspaces, except: %i[index]
+  # get 'dashboard', to: 'dashboard#index'
+  resources :workspaces
 
   namespace :graphs do
     resources :flight_hours, only: %i[index]
