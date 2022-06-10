@@ -1,6 +1,6 @@
 <%= render partial: 'partials/form_errors', locals: { object: @graph } %>
 
-<%= form_with model: @graph do |form| %>
+<%= form_with model: [:system, @graph] do |form| %>
   <%= form.label :name, 'Name:' %><br>
   <%= form.text_field :name %><br>
 

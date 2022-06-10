@@ -19,14 +19,14 @@ Rails.application.routes.draw do
     resources :raw_streams, only: %i[index]
   end
 
-  resources :graphs
   resources :graph_categories
   resources :workspaces do
     resources :graphs, only: %i[destroy], controller: 'workspaces/graphs'
   end
 
   namespace :system do
-    resources :workspaces
+    resources :graphs
     resources :users
+    resources :workspaces
   end
 end

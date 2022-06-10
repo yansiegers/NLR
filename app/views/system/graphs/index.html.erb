@@ -1,5 +1,5 @@
 <h1>Graphs</h1>
-<%= link_to 'New graph', new_graph_path %>
+<%= link_to 'New graph', new_system_graph_path %>
 
 <% if @graphs.any? %>
   <table>
@@ -21,10 +21,10 @@
           <td><%= graph.created_at %></td>
           <td><%= graph.updated_at %></td>
           <td>
-            <%= link_to 'Edit', edit_graph_path(graph) %>
+            <%= link_to 'Edit', edit_system_graph_path(graph) %>
           </td>
           <td>
-            <%= button_to 'Delete', graph, method: :delete, data: { confirm: 'Are you sure?' } %>
+            <%= button_to 'Delete', [:system, graph], method: :delete, data: { confirm: 'Are you sure?' } %>
           </td>
         </tr>
       <% end %>
