@@ -8,8 +8,8 @@ Rails.application.routes.draw do
 
   resources :workspaces do
     resources :graphs, only: %i[destroy]
+    resources :graph_categories, only: %i[destroy]
   end
-  resources :graph_categories
 
   namespace :graphs do
     resources :flight_hours, only: %i[index]
@@ -23,6 +23,7 @@ Rails.application.routes.draw do
 
   namespace :system do
     resources :graphs
+    resources :graph_categories
     resources :users
     resources :workspaces
   end

@@ -1,5 +1,5 @@
 <h1>Graph categories</h1>
-<%= link_to 'New graph category', new_graph_category_path %>
+<%= link_to 'New graph category', new_system_graph_category_path %>
 
 <% if @graph_categories.any? %>
   <table>
@@ -21,10 +21,10 @@
           <td><%= graph_category.created_at %></td>
           <td><%= graph_category.updated_at %></td>
           <td>
-            <%= link_to 'Edit', edit_graph_category_path(graph_category) %>
+            <%= link_to 'Edit', edit_system_graph_category_path(graph_category) %>
           </td>
           <td>
-            <%= button_to 'Delete', graph_category, method: :delete, data: { confirm: 'Are you sure?' } %>
+            <%= button_to 'Delete', [:system, graph_category], method: :delete, data: { confirm: 'Are you sure?' } %>
           </td>
         </tr>
       <% end %>
