@@ -1,0 +1,11 @@
+<%= render partial: 'partials/form_errors', locals: { object: @role } %>
+
+<%= form_with model: [:system, @role] do |form| %>
+  <%= form.label :name, 'Name:' %><br>
+  <%= form.text_field :name %><br>
+
+  <%= form.label :utility_name, 'Utility name' %><br>
+  <%= form.text_field :utility_name %><br>
+
+  <%= form.submit %>
+<% end %>

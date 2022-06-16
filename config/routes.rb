@@ -6,7 +6,10 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root 'pages#home'
 
+  devise_for :users
+
   get 'workspace', to: 'workspace#index'
+  get 'account', to: 'account#show'
 
   namespace :graphs do
     resources :flight_hours, only: %i[index]
@@ -24,6 +27,7 @@ Rails.application.routes.draw do
   end
 
   namespace :system do
-    resources :users
+    resources :users, only: %i[index show]
+    resources :roles, except: %i[show]
   end
 end

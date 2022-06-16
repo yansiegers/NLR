@@ -2,7 +2,7 @@
 
 module Graphs
   # Controls raw streams
-  class RawStreamsController < ApplicationController
+  class RawStreamsController < EngineersDashboardController
     def index; end
   end
 end

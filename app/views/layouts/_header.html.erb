@@ -1,6 +1,6 @@
 <header class="p-14 flex justify-between">
   <div class="flex justify-start gap-8">
-    <% @quick_bookmarks.limit(4).each do |quick_bookmark, index| %>
+    <% @quick_bookmarks.each do |quick_bookmark, index| %>
       <%= link_to quick_bookmark.name, bookmark_path(quick_bookmark), class: class_names('btn', { 'btn__secondary': !current_page?(bookmark_path(quick_bookmark)) }) %>
     <% end %>
     <%= link_to 'More...', bookmarks_path, class: 'btn btn__secondary' if @quick_bookmarks.any? %>
@@ -12,7 +12,17 @@
       </svg>
     <% end %>
     <span class="btn btn__secondary">
-      <%= @current_user.full_name %>
+      <%= current_user.full_name || 'Anonymous user' %>
     </span>
+    <%= link_to account_path, class: class_names('btn', { 'btn__secondary': !current_page?(account_path) }) do %>
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+      </svg>
+    <% end %>
+    <%= button_to destroy_user_session_path, method: :delete, class: 'btn btn__secondary', data: { confirm: 'Are you sure?' } do %>
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+      </svg>
+    <% end %>
   </div>
 </header>

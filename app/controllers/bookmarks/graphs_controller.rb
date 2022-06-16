@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Bookmarks
-  class GraphsController < ApplicationController
+  class GraphsController < EngineersDashboardController
     before_action :find_bookmark, only: %i[destroy]
     before_action :find_graph, only: %i[destroy]
 
@@ -18,6 +18,8 @@ module Bookmarks
     private
 
     def find_bookmark
+      return Bookmark.all unless current_user
+
       @bookmark = current_user.bookmarks.find(params[:bookmark_id])
     end
 

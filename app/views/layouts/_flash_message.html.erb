@@ -1,10 +1,14 @@
 <% flash.each do |name, message| %>
-  <% if name == 'success' %>
+  <% if name == 'error' %>
+    <div class="flash-message flash-message__error">
+      <%= message %>
+    </div>
+  <% elsif name == 'success' %>
     <div class="flash-message flash-message__success">
       <%= message %>
     </div>
   <% else %>
-    <div class="flash-message flash-message__error">
+    <div class="flash-message">
       <%= message %>
     </div>
   <% end %>

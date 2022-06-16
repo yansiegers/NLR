@@ -1,19 +1,29 @@
 <%= render partial: 'partials/form_errors', locals: { object: @bookmark } %>
 
-<%= form_with model: @bookmark do |form| %>
-  <%= form.label :name, 'Name:' %><br>
-  <%= form.text_field :name %><br>
+<%= form_with model: @bookmark, class: 'w-96' do |form| %>
+  <div class="field">
+    <%= form.label :name, 'Name:' %><br>
+    <%= form.text_field :name %>
+  </div>
 
-  <%= form.check_box :favorite %>
-  <%= form.label :favorite, 'Favorite' %><br>
+  <div class="field">
+    <%= form.check_box :favorite %>
+    <%= form.label :favorite, 'Favorite' %><br>
+  </div>
 
-  <%= form.label :user_id, "User:" %><br>
-  <%= form.select :user_id, options_for_select(user_select_options), { prompt: 'Select' } %><br>
+  <div class="field">
+    <%= form.label :user_id, "User:" %><br>
+    <%= form.select :user_id, options_for_select(user_select_options), { prompt: 'Select' } %><br>
+  </div>
 
-  <%= form.collection_check_boxes :graph_ids, Graph.all, :id, :name do |graph| %>
-    <%= graph.check_box %>
-    <%= graph.label %><br>
-  <% end %>
+  <div class="field">
+    <%= form.collection_check_boxes :graph_ids, Graph.all, :id, :name do |graph| %>
+      <%= graph.check_box %>
+      <%= graph.label %><br>
+    <% end %>
+  </div>
 
-  <%= form.submit %>
+  <div class="actions">
+    <%= form.submit %>
+  </div>
 <% end %>

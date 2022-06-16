@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class GraphsController < ApplicationController
+class GraphsController < EngineersDashboardController
   before_action :find_graph, only: %i[edit update destroy]
 
   def index

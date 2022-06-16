@@ -26,6 +26,9 @@
   h1 {
     @apply text-xl font-semibold;
   }
+  h2 {
+    @apply text-lg font-semibold;
+  }
 
   .nav {
     @apply my-6 flex flex-col gap-8;
@@ -48,11 +51,30 @@
     @apply sticky top-0 border-b border-nlr-grey bg-white
   }
   th, td {
-    @apply p-2
+    @apply p-2;
   }
 
+  form .field,
+  form .actions {
+    @apply mb-5;
+  }
+
+  input[type='text'],
+  input[type='email'],
+  input[type='url'],
+  input[type='password'],
+  input[type='number'],
+  input[type='date'],
+  input[type='datetime-local'],
+  input[type='month'],
+  input[type='search'],
+  input[type='tel'],
+  input[type='time'],
+  input[type='week'] {
+    @apply w-full;
+  }
   input[type=submit] {
-    @apply p-2 mt-4 text-white bg-nlr-blue font-semibold cursor-pointer;
+    @apply px-3 py-2 text-white bg-nlr-blue font-semibold cursor-pointer;
   }
 
   .link {
@@ -65,11 +87,15 @@
   .btn {
     @apply px-3 py-2 text-white bg-nlr-blue font-semibold;
   }
-  a.btn:hover {
+  a.btn:hover,
+  button.btn:hover {
     @apply underline;
   }
   .btn__secondary {
     @apply text-nlr-blue-dark bg-nlr-grey-light font-normal;
+  }
+  .btn__tertiary {
+    @apply text-white bg-nlr-orange font-semibold;
   }
 
   .flash-message {

@@ -2,7 +2,7 @@
 
 module Graphs
   # Controls impacts
-  class ImpactsController < ApplicationController
+  class ImpactsController < EngineersDashboardController
     def index; end
   end
 end

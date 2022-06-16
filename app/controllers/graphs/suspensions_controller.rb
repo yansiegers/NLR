@@ -2,7 +2,7 @@
 
 module Graphs
   # Controls suspensions
-  class SuspensionsController < ApplicationController
+  class SuspensionsController < EngineersDashboardController
     def index; end
   end
 end
